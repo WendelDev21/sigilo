@@ -75,68 +75,75 @@
         }
 
         function gerarAtestado() {
-            const local = document.getElementById('local').value;
-            const cnes = document.getElementById('cnes').value;
-            const nomeSocial = document.getElementById('nome_social').value;
-            const nomePaciente = document.getElementById('nome_paciente').value;
-            const nascimento = document.getElementById('nascimento').value;
-            const idade = document.getElementById('idade').value;
-            const cns = document.getElementById('cns').value;
-            const cpf = document.getElementById('cpf').value;
-            const diasRepouso = document.getElementById('dias_reposo').value;
-            const crm = document.getElementById('crm').value;
-            const medico = document.getElementById('medico').value;
-            const endereco = document.getElementById('endereco').value;
-            const cidade = document.getElementById('cidade').value;
-            const telefone = document.getElementById('telefone').value;
-            const dataHora = new Date().toLocaleString('pt-BR');
+    const local = document.getElementById('local').value;
+    const cnes = document.getElementById('cnes').value;
+    const nomeSocial = document.getElementById('nome_social').value;
+    const nomePaciente = document.getElementById('nome_paciente').value;
+    const nascimento = document.getElementById('nascimento').value;
+    const idade = document.getElementById('idade').value;
+    const cns = document.getElementById('cns').value;
+    const cpf = document.getElementById('cpf').value;
+    const diasRepouso = document.getElementById('dias_reposo').value;
+    const crm = document.getElementById('crm').value;
+    const medico = document.getElementById('medico').value;
+    const endereco = document.getElementById('endereco').value;
+    const cidade = document.getElementById('cidade').value;
+    const telefone = document.getElementById('telefone').value;
+    const dataHora = new Date().toLocaleString('pt-BR');
 
-            // Formatando a data de nascimento para o formato brasileiro
-            const dataNascimentoFormatada = formatarData(nascimento);
+    // Formatando a data de nascimento para o formato brasileiro
+    const dataNascimentoFormatada = formatarData(nascimento);
 
-            let conteudo = `
-                <div style="display: flex; align-items: center; justify-content: start; margin-bottom: 20px;">
-                    <img src='Brasão_de_Aracaju.png' alt='Brasão de Aracaju' style="width: 40px; height: auto; margin-right: 15px;">
-                    <div style="font-size: 14px; text-align: left;">
-                        <p style="font-size: 10px; margin: 0;"><strong>Prefeitura Municipal de Aracaju</strong></p>
-                        <p style="font-size: 10px; margin: 0;">Endereço: R. Frei Luiz Canolo de Noronha, 42 - Ponto Novo, Aracaju - SE, 49097-270</p>
-                        <p style="font-size: 10px; margin: 0;">CNPJ: 13.128.780/0008-78</p>
-                        <p style="font-size: 10px; margin: 0;">Código: (802160)</p>
-                    </div>
-                </div>
-                <p style="margin: 0;"><strong>Atestado médico - Atendimento de Consultas</strong></p>
-                <p>__________________________________________________________________________________</p>
-                <p style="text-align: left;"><strong>LOCAL DE ATENDIMENTO: </strong>${local}</p>
-                <p style="text-align: left;"><strong>CNES: </strong>${cnes}</p>
-                <p style="text-align: left;"><strong>Nome Social: </strong>${nomeSocial}</p>
-                <p style="text-align: left;"><strong>Nome do Paciente: </strong>${nomePaciente}</p>
-                <p style="text-align: left;"><strong>Data de Nascimento: </strong>${dataNascimentoFormatada}</p>
-                <p style="text-align: left;"><strong>Idade (anos): </strong>${idade}</p>
-                <p style="text-align: left;"><strong>C.N.S: </strong>${cns}</p>
-                <p style="text-align: left;">Atesto que o(a) Sr.(a) <strong>${nomePaciente}</strong> encontra-se sob meus cuidados profissionais necessitando de afastamento de suas atividades pelo período de <strong>${diasRepouso}</strong> dia(s), referente ao atendimento registrado por este documento. Para autorizar a inclusão do CID o paciente, ou representante legal, deve manifestar aceite mediante assinatura do campo abaixo. CID de Referência do documento: A09</p>
-                <p style="text-align: center;">_______________________________</p>
-                <p style="text-align: center;">Sr(a) portador do CPF ${cpf}.</p>
-                <p style="text-align: center;">_______________________________</p>
-                <p style="text-align: center;">${medico}</p>
-                <p style="text-align: center;">CLÍNICO GERAL EM UNIDADE DE PRONTO ATENDIMENTO</p>
-                <p style="text-align: center;"><strong>CRM:</strong> ${crm}</p>
-                <p style="text-align: left;"><strong>Data e Hora:</strong> <strong>${dataHora}</strong></p>
-                <p style="text-align: left;"><strong>Endereço:</strong> <strong>${endereco}</strong></p>
-                <p style="text-align: left;"><strong>Cidade:</strong> <strong>${cidade}</strong></p>
-                <p style="text-align: left;"><strong>Telefone:</strong> <strong>${telefone}</strong></p>
-            `;
+    let conteudo = `
+        <div style="display: flex; align-items: center; justify-content: start; margin-bottom: 20px;">
+            <img src='Brasão_de_Aracaju.png' alt='Brasão de Aracaju' style="width: 40px; height: auto; margin-right: 15px;">
+            <div style="font-size: 14px; text-align: left;">
+                <p style="font-size: 10px; margin: 0;"><strong>Prefeitura Municipal de Aracaju</strong></p>
+                <p style="font-size: 10px; margin: 0;">Endereço: R. Frei Luiz Canolo de Noronha, 42 - Ponto Novo, Aracaju - SE, 49097-270</p>
+                <p style="font-size: 10px; margin: 0;">CNPJ: 13.128.780/0008-78</p>
+                <p style="font-size: 10px; margin: 0;">Código: (802160)</p>
+            </div>
+        </div>
+        <p style="margin: 0;"><strong>Atestado médico - Atendimento de Consultas</strong></p>
+        <p>__________________________________________________________________________________</p>
+        <p style="text-align: left;"><strong>LOCAL DE ATENDIMENTO: </strong>${local}</p>
+        <p style="text-align: left;"><strong>CNES: </strong>${cnes}</p>
+        <p style="text-align: left;"><strong>Nome Social: </strong>${nomeSocial}</p>
+        <p style="text-align: left;"><strong>Nome do Paciente: </strong>${nomePaciente}</p>
+        <p style="text-align: left;"><strong>Data de Nascimento: </strong>${dataNascimentoFormatada}</p>
+        <p style="text-align: left;"><strong>Idade (anos): </strong>${idade}</p>
+        <p style="text-align: left;"><strong>C.N.S: </strong>${cns}</p>
+        <p style="text-align: left;">Atesto que o(a) Sr.(a) <strong>${nomePaciente}</strong> encontra-se sob meus cuidados profissionais necessitando de afastamento de suas atividades pelo período de <strong>${diasRepouso}</strong> dia(s), referente ao atendimento registrado por este documento. Para autorizar a inclusão do CID o paciente, ou representante legal, deve manifestar aceite mediante assinatura do campo abaixo. CID de Referência do documento: A09</p>
+        <p style="text-align: center;">_______________________________</p>
+        <p style="text-align: center;">Sr(a) portador do CPF ${cpf}.</p>
+        <p style="text-align: center;">_______________________________</p>
+        <p style="text-align: center;">${medico}</p>
+        <p style="text-align: center;">CLÍNICO GERAL EM UNIDADE DE PRONTO ATENDIMENTO</p>
+        <p style="text-align: center;"><strong>CRM:</strong> ${crm}</p>
+        <p style="text-align: left;"><strong>Data e Hora:</strong> <strong>${dataHora}</strong></p>
+        <p style="text-align: left;"><strong>Endereço:</strong> <strong>${endereco}</strong></p>
+        <p style="text-align: left;"><strong>Cidade:</strong> <strong>${cidade}</strong></p>
+        <p style="text-align: left;"><strong>Telefone:</strong> <strong>${telefone}</strong></p>
+    `;
 
-            // Gerando o PDF com html2pdf.js
-            const element = document.createElement('div');
-            element.innerHTML = conteudo;
+    // Gerando o PDF com html2pdf.js
+    const element = document.createElement('div');
+    element.innerHTML = conteudo;
 
-            html2pdf(element, {
-                margin: 10,
-                filename: 'atestado_medico.pdf',
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            });
-        }
+    html2pdf(element, {
+        margin: 10,
+        filename: 'atestado_medico.pdf',
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    }).then(function() {
+        // Criar um link para download
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(new Blob([element.innerHTML], { type: 'application/pdf' }));
+        link.download = 'atestado_medico.pdf';
+        link.click();
+    });
+}
+
 
     </script>
 </body>
